@@ -1,0 +1,93 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8  shadow-sm p-3 mb-10 bg-body rounded  ">
+        <form [formGroup]="ContactForm" (ngSubmit)="onSubmit()">
+          <div class="container 1">
+            <div class="row">
+          <div class="col-xs-12 col-sm-10 col-md-12 text-center">
+            <h1>Reactive Form</h1>
+          </div>
+          <div class="form-group col-md-6  firstname" >
+            <label for="firstname"><b>First Name</b></label>
+            <input
+            formControlName="firstname"
+              type="text"
+              id="firstname"
+              class="form-control"
+              >
+              <span 
+              *ngIf="!ContactForm.get('firstname').valid && ContactForm.get('firstname').touched"
+              class="help-block text-danger
+              ">
+              please enter a valid first name</span>
+          </div>
+          <div class="form-group  col-md-6  lastname">
+            <label for="lastname"><b>Last Name</b></label>
+            <input
+            formControlName="lastname"
+              type="text"
+              id="lastname"
+              class="form-control"
+              >
+              <span 
+              *ngIf="!ContactForm.get('lastname').valid && ContactForm.get('lastname').touched"
+              class="help-block text-danger">
+              please enter a valid last name</span>
+          </div>
+        </div>
+          </div>
+     
+          
+          <div class="form-group">
+            <label for="email"><b>E-mail</b></label>
+            <input
+            formControlName="email"
+              type="text"
+              id="email"
+              class="form-control"
+              >
+              <span 
+              *ngIf="!ContactForm.get('email').valid && ContactForm.get('email').touched"
+              class="help-block text-danger">
+              please enter a valid email</span>
+          </div>
+          <div class="form-group">
+            <label><b>Monthly Advertising Budget</b></label>
+            <input
+            formControlName="budget"
+              type="Budget"
+              id="Budget"
+              class="form-control"
+              >
+              <span
+              *ngIf="!ContactForm.get('budget').valid && ContactForm.get('budget').touched"
+              class="help-block text-danger">
+              please enter a budget</span>
+          
+          </div>
+          <div class="form-group">
+            <label ><b>Phone number</b></label>
+            <input
+            formControlName="phone"
+              type="value"
+              id="Phone"
+              class="form-control"
+              >
+              <span 
+              *ngIf="!ContactForm.get('phone').valid && ContactForm.get('phone').touched"
+              class="help-block text-danger">
+              please enter a number</span>
+          
+          </div>
+        
+          <button class="btn btn-success" type="submit" (click)='storeData()'>Get Free Trial</button>
+          <br> 
+          <br>
+          <button class="btn btn-primary" (click)='getData()'>Get Data</button>
+             
+        </form>
+      </div>
+    </div>
+  </div>
+

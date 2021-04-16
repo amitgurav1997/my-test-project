@@ -1,0 +1,36 @@
+.container {
+margin-top: 50px;
+}
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+.form-group.col-md-6.firstname {
+    right: 15px;
+}
+.form-group.col-md-6.lastname {
+    left: 14px;
+}
+.col-xs-12.col-sm-10.col-md-8.shadow-sm.p-3.mb-10.bg-body.rounded {
+    position: relative;
+    top: 42px;
+    background-color: #0000000E;
+    margin: auto;
+    border: 3px solid black;
+}
+
+.col-xs-12.col-sm-10.col-md-12.text-center {
+    position: relative;
+    bottom: 33px;
+}
+
+@media only screen and (max-width: 700px){
+
+
+    .form-group.col-md-6.lastname {
+        right: 14px;
+    }
+
+}
+  
