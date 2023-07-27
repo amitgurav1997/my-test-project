@@ -1,0 +1,19 @@
+<div *ngFor="let question of quizData">
+  <div *ngIf="question.queType === 'Main'">
+    <p>{{ question.question }}</p>
+    <select *ngIf="question.type === 'dropdown'" [(ngModel)]="selectedAnswers[question.question]">
+      <option *ngFor="let option of question.options" [value]="option">{{ option }}</option>
+    </select>
+    <input *ngIf="question.type === 'textinput'" [(ngModel)]="selectedAnswers[question.question]" type="text">
+
+    <div *ngIf="selectedAnswers[question.question] === question.showIf">
+      <div *ngFor="let subQuestion of question.subQue">
+        <p>{{ subQuestion.question }}</p>
+        <select *ngIf="subQuestion.type === 'dropdown'" [(ngModel)]="selectedSubAnswers[subQuestion.question]">
+          <option *ngFor="let option of subQuestion.options" [value]="option">{{ option }}</option>
+        </select>
+        <input *ngIf="subQuestion.type === 'textinput'" [(ngModel)]="selectedSubAnswers[subQuestion.question]" type="text">
+      </div>
+    </div>
+  </div>
+</div>
